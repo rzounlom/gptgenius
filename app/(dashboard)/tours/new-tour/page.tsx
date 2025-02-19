@@ -4,13 +4,11 @@ import {
   dehydrate,
 } from "@tanstack/react-query";
 
-import { UserProfile } from "@clerk/nextjs";
-
-export default async function UserProfilePage() {
+export default async function NewToursPage() {
   const queryClient = new QueryClient();
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <UserProfile />
+      <div>NewToursPage</div>
     </HydrationBoundary>
   );
 }

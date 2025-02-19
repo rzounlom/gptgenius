@@ -1,7 +1,14 @@
-import React from "react";
+import {
+  HydrationBoundary,
+  QueryClient,
+  dehydrate,
+} from "@tanstack/react-query";
 
-const ToursPage = () => {
-  return <div>ToursPage</div>;
-};
-
-export default ToursPage;
+export default async function ToursPage() {
+  const queryClient = new QueryClient();
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <div>ToursPage</div>
+    </HydrationBoundary>
+  );
+}
